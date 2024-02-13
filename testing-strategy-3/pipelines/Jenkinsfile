@@ -6,6 +6,7 @@ pipeline {
     environment {
         PROJECT_PATH="${env.JENKINS_HOME}/workspace/training-2/testing-strategy-3"
         SCRIPTS_PATH="${PROJECT_PATH}/scripts"
+        REPORT_PATH="${PROJECT_PATH}/e2e-web/cypress/cucumber-json"
         DEV="dev"
         ALPHA="alpha"
         PREPROD="preprod"
@@ -41,6 +42,16 @@ pipeline {
                     echo "Report"
                     ./report.sh generate DEV
                     """
+                    dir("folder") {
+                      publishHTML (target : [allowMissing: false,
+                       alwaysLinkToLastBuild: true,
+                       keepAll: true,
+                       reportDir: 'reports',
+                       reportFiles: "${REPORT_PATH}",
+                       reportName: 'My Reports',
+                       reportTitles: 'The Report'])
+                    }
+                    
                 }
             }
         }
