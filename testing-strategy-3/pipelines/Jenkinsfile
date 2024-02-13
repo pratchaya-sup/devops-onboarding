@@ -28,6 +28,7 @@ pipeline {
                 dir("${PROJECT_PATH}/e2e-web") {
                    sh """
                     echo "Test"
+                    npm install
                     npm run test
                     """
                 }
