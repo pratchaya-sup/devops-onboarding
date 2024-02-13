@@ -42,17 +42,16 @@ pipeline {
                     echo "Report"
                     ./report.sh generate DEV
                     """
-                    dir("folder") {
+                }
+              dir("${REPORT_PATH}") {
                       publishHTML (target : [allowMissing: false,
                        alwaysLinkToLastBuild: true,
                        keepAll: true,
                        reportDir: 'reports',
-                       reportFiles: "${REPORT_PATH}/index.html",
+                       reportFiles: "index.html",
                        reportName: 'My Reports',
                        reportTitles: 'The Report'])
                     }
-                    
-                }
             }
         }
         stage('Deployment') {
