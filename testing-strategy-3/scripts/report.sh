@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 DIR_CURRENT=$(pwd)
-DIR_E2E="${DIR_CURRENT/scripts/""}/e2e-web" 
+DIR_E2E="${DIR_CURRENT}/e2e-web" 
 DIR_REPORT="${DIR_E2E}/cypress/cucumber-json"
 cd $DIR_E2E
 
