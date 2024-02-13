@@ -28,6 +28,9 @@ pipeline {
                 dir("${SCRIPTS_PATH}") {
                    sh """
                     echo "Test"
+                    echo cd ../e2e-web
+                    npm run test 
+
                     """
                 }
             }
