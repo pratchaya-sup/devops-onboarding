@@ -39,7 +39,7 @@ pipeline {
                 dir("${SCRIPTS_PATH}") {
                    sh """
                     echo "Report"
-                    ./report.sh
+                    ./report.sh generate
                     """
                 }
             }
