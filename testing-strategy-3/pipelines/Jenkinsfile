@@ -34,6 +34,16 @@ pipeline {
                 }
             }
         }
+        stage('Report') {
+            steps {
+                dir("${SCRIPTS_PATH}") {
+                   sh """
+                    echo "Report"
+                    ./report.sh
+                    """
+                }
+            }
+        }
         stage('Deployment') {
             steps {
                 dir("${SCRIPTS_PATH}") {
