@@ -18,7 +18,7 @@ pipeline {
                 dir("${SCRIPTS_PATH}") {
                     sh """
                     echo "Build"
-                    ./application-management.sh build
+                    ./application-management.sh start
                     """
                 }
             }
