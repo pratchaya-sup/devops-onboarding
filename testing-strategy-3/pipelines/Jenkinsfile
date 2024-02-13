@@ -18,7 +18,7 @@ pipeline {
                 dir("${SCRIPTS_PATH}") {
                     sh """
                     echo "Build"
-                    echo ./scripts/application-management.sh
+                    ./scripts/application-management.sh
                     """
                 }
             }
@@ -28,7 +28,7 @@ pipeline {
                 dir("${PROJECT_PATH}/e2e-web") {
                    sh """
                     echo "Test"
-                    echo npm run test
+                    npm run test
                     """
                 }
             }
