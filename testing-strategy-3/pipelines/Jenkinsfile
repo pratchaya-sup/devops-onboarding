@@ -25,10 +25,10 @@ pipeline {
         }
         stage('Test environment DEV') {
             steps {
-                dir("${SCRIPTS_PATH}") {
+                dir("${PROJECT_PATH}/e2e-web") {
                    sh """
                     echo "Test"
-                    echo cd ../e2e-web && npm run test
+                    echo npm run test
                     """
                 }
             }
